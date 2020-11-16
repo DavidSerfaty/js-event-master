@@ -62,7 +62,6 @@ headerSite.addEventListener("dblclick",nuclearSite)
 
 // Fonctionnalité 6
 let editCardtest = Array.from(document.getElementsByClassName("btn-outline-secondary"));
-console.log(editCardtest)
 let textCard = document.getElementsByClassName("card-text");
 let imgCard = document.getElementsByClassName("card-img-top");
 
@@ -79,4 +78,26 @@ editCardtest.forEach((item, index) =>{
 });
 
 // Fonctionnalité 7
-let allCard = Array.from(document.getElementsByClassName("col-md-4"));
+var moveRightBtn = document.getElementsByClassName("btn-secondary")[0];
+var numberOfCards = document.getElementsByClassName("col-md-4").length;
+
+
+let rightMove = function(){
+  var firstCard = document.getElementsByClassName("col-md-4")[0];
+  var lastCard = document.getElementsByClassName("col-md-4")[numberOfCards-1];
+  document.getElementsByClassName("row")[1].insertBefore(lastCard, firstCard);
+}
+moveRightBtn.addEventListener("click",rightMove);
+
+// Fonctionnalité 8
+var moveLeftBtn = document.getElementsByClassName("btn-primary")[0];
+console.log(moveLeftBtn);
+moveLeftBtn.href = "#" ;
+let leftMove = function(){
+  var firstCard = document.getElementsByClassName("col-md-4")[0];
+  var lastCard = document.getElementsByClassName("col-md-4")[numberOfCards-1];
+  document.getElementsByClassName("row")[1].insertBefore(firstCard, lastCard.nextSibling);
+}
+moveLeftBtn.addEventListener("click",leftMove);
+
+// Fonctionnalité 9
