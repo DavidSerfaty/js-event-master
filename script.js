@@ -101,3 +101,29 @@ let leftMove = function(){
 moveLeftBtn.addEventListener("click",leftMove);
 
 // Fonctionnalité 9
+let body = document.getElementsByTagName("body")[0]
+let logo = document.getElementsByClassName("navbar-brand")[0]
+logo.addEventListener("keypress", (e)=>{
+  switch (e.code) {
+    case "KeyA":
+      body.className = ""
+      body.classList.add("col-4")
+      break;
+    case "KeyY":
+      body.className = ""
+      body.classList.add("col-4")
+      body.classList.add("offset-4")
+      break;
+    case "KeyP":
+      body.className = ""
+      body.classList.add("col-4")
+      body.classList.add("offset-8")
+      break;
+    case "KeyB":
+      body.className = ""
+      break;
+    default:
+      body.className = ""
+      break;
+  }
+})
